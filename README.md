@@ -1,2 +1,1 @@
-# wsdm2022-challenge
-WSDM2022 Challenge from DGL Team
+# WSDM 2022 Challenge - Temporal Link Prediction
