@@ -23,7 +23,7 @@ Dataset A contains the following files:
   * `edge_type`: the edge type ID.
   * `timestamp`: the timestamp in Unix Epoch.
 * `node_features.csv` ([Download here]()): the file whose rows represent node features.  The first column is the node ID while the rest of the columns are all anonymized categorical features.  -1 means that the categorical feature is missing.
-* `edge_type_features.csv` ([Download here](https://data.dgl.ai/dataset/WSDMCup2022/edge_type_features.csv.gz)): the file whose rows represent features of edge types.  The first column is the edge type ID while the rest of the columns are all anonymized categorical features.
+* `edge_type_features.csv` ([Download here]()): the file whose rows represent features of edge types.  The first column is the edge type ID while the rest of the columns are all anonymized categorical features.
 
 ### Description of Dataset B
 
