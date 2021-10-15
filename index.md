@@ -29,7 +29,7 @@ Dataset A contains the following files:
 
 Dataset B contains a single file:
 
-* `edges_train_B.csv` ([Download here]()): the file containing the temporal edges between the users and items.  Each row contains the following columns:
+* `edges_train_B.csv` ([Download here](https://data.dgl.ai/dataset/WSDMCup2022/edges_train_B.csv.gz)): the file containing the temporal edges between the users and items.  Each row contains the following columns:
   * `src_id`: the source node ID.
   * `dst_id`: the destination node ID.
   * `edge_type`: the interaction type ID.
