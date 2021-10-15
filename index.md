@@ -15,17 +15,34 @@ The task will be predicting whether an edge of a given type will exist between t
 
 ### Description of Dataset A
 
-(to be announced)
+Dataset A contains the following files:
+
+* [`edges_train.csv`](https://data.dgl.ai/dataset/WSDMCup2022/edges_train.csv.gz): the file containing the temporal edges between the nodes.  Each row represents an edge with the following four columns:
+  * `src_id`: the source node ID.
+  * `dst_id`: the destination node ID.
+  * `edge_type`: the edge type ID.
+  * `timestamp`: the timestamp in Unix Epoch.
+* [`node_features.csv`](https://data.dgl.ai/dataset/WSDMCup2022/node_features.csv.gz): the file whose rows represent node features.  The first column is the node ID while the rest of the columns are all anonymized categorical features.  -1 means that the categorical feature is missing.
+* [`edge_type_features.csv`](https://data.dgl.ai/dataset/WSDMCup2022/edge_type_features.csv.gz): the file whose rows represent features of edge types.  The first column is the edge type ID while the rest of the columns are all anonymized categorical features.
 
 ### Description of Dataset B
 
-(to be announced)
+Dataset B contains a single file:
+
+* [`edges_train.csv`](todo): the file containing the temporal edges between the users and items.  Each row contains the following columns:
+  * `src_id`: the source node ID.
+  * `dst_id`: the destination node ID.
+  * `edge_type`: the interaction type ID.
+  * `timestamp`: the timestamp in Unix Epoch.
+  * The rest of the columns are floating point numbers representing anonymized features of the interaction itself.
+
+Note that in this dataset the nodes and edge types do not have features, unlike Dataset A.
 
 ### Test set and submission format
 
 Please complete the submission in [this form](todo).
 
-For Dataset A, we will release a CSV file `input_A.csv` containing the following five columns:
+We will release two CSV file `input_A.csv` and `input_B.csv` representing the test queries for dataset A and B respectively.  Each file contains the following five columns:
 
 * `src_id`: The source node ID
 * `dst_id`: The destination node ID
@@ -33,29 +50,17 @@ For Dataset A, we will release a CSV file `input_A.csv` containing the following
 * `start_time`: The starting timestamp in Unix Epoch
 * `end_time`: The ending timestamp in Unix Epoch
 
-We expect a submission file `output_A.csv` with all the above columns, and additionally the following column:
+We expect two files `output_A.csv` and `output_B.csv` representing your predictions on each test query.  Each file should contain the same number of lines as the given input files.  Each line should contain a single number: 1 if you predict that the edge connecting from node ID `src_id` to node ID `dst_id` with type `event_type` will be added to the graph at some time between `start_time` and `end_time`, and 0 otherwise.
 
-* `exists`: 1 if an edge with type `event_type` from node ID `src_id` to node ID `dst_id` is predicted to exist between timestamp `start_time` and `end_time`.  0 otherwise.
+It is guaranteed that the timestamps in the test set will be always later than the training set.  This is to match a more realistic setting where one learns from the past and predicts the future.
 
-A sample `output_A.csv` file can be downloaded [here](todo).
+#### Example
 
-For Dataset B, we will release a CSV file `input_B.csv` containing the following five columns:
-
-`user_id`: The user ID
-`item_id`: The item ID
-`interaction_type`: The interaction type ID
-`start_time`: The starting timestamp in Unix Epoch
-`end_time`: The ending timestamp in Unix Epoch
-
-We expect a submission file `output_B.csv` with all the above columns, and additionally the following column:
-
-`exists`: 1 if an edge with type `interaction_type` from user ID `user_id` to item ID `item_id` is predicted to exist between timestamp `start_time` and `end_time`.  0 otherwise.
-
-A sample `output_B.csv` file can be downloaded [here](todo).
+(TODO)
 
 ### Competition Terms and Conditions
 
-We expect all the participants to open source their submissions.
+At the end of the challenge, each team is encouraged to open source the source code that was used to generate their final challenge solution under the MIT license. To be eligible for the leaderboard or prizes, winning teams are also required to submit papers describing their method to the WSDM Cup Workshop, and present their work at the workshop.  Refer to the "Call for Papers" section on the WSDM Cup 2022 webpage for more details.
 
 Participants are allowed to participate only once, with no concurrent submissions or code sharing between the teams.
 
@@ -63,7 +68,7 @@ Participants are not allowed to use external datasets or pretrained models.
 
 ### Evaluation Criteria
 
-We use Area Under ROC (AUC) as evaluation metric for both datasets, and use the harmonic average of the two AUCs as the score of the submission.  Specifically, let `AUC_A` and `AUC_B` be the AUC for Dataset A and Dataset B respectively, the final score is `2 / (1 / AUC_A + 1 / AUC_B)`.  This is to encourage the submissions to work well on both tasks, instead of working extremely well on one while sacrificing the other.
+We use Area Under ROC (AUC) as evaluation metric for both datasets, and use the *harmonic average* of the two AUCs as the score of the submission.  Specifically, let `AUC_A` and `AUC_B` be the AUC for Dataset A and Dataset B respectively, the final score is `2 / (1 / AUC_A + 1 / AUC_B)`.  This is to encourage the submissions to work well on both tasks, instead of working extremely well on one while sacrificing the other.
 
 ### Schedule
 
@@ -71,7 +76,7 @@ We use Area Under ROC (AUC) as evaluation metric for both datasets, and use the 
 
 ### Support or Contact
 
-(to be announced)
+Join the channel **wsdm22-challenge** in [DGL's Slack workspace](https://join.slack.com/t/deep-graph-library/shared_invite/zt-eb4ict1g-xcg3PhZAFAB8p6dtKuP6xQ)
 
 ### Links
 
