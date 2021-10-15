@@ -17,7 +17,7 @@ The task will be predicting whether an edge of a given type will exist between t
 
 Dataset A contains the following files:
 
-* `edges_train.csv` ([Download here](https://data.dgl.ai/dataset/WSDMCup2022/edges_train.csv.gz)): the file containing the temporal edges between the nodes.  Each row represents an edge with the following four columns:
+* `edges_train_A.csv` ([Download here](https://data.dgl.ai/dataset/WSDMCup2022/edges_train_A.csv.gz)): the file containing the temporal edges between the nodes.  Each row represents an edge with the following four columns:
   * `src_id`: the source node ID.
   * `dst_id`: the destination node ID.
   * `edge_type`: the edge type ID.
@@ -29,54 +29,101 @@ Dataset A contains the following files:
 
 Dataset B contains a single file:
 
-* `edges_train.csv` (todo): the file containing the temporal edges between the users and items.  Each row contains the following columns:
+* `edges_train_B.csv` ([Download here]()): the file containing the temporal edges between the users and items.  Each row contains the following columns:
   * `src_id`: the source node ID.
   * `dst_id`: the destination node ID.
   * `edge_type`: the interaction type ID.
   * `timestamp`: the timestamp in Unix Epoch.
-  * The rest of the columns are floating point numbers representing anonymized features of the interaction itself.
+  * `feat`: a string of comma-separated floating point values representing the edge's anonymized features.  An empty string means that the edge's feature is unavailable.
 
 Note that in this dataset the nodes and edge types do not have features, unlike Dataset A.
 
-### Test set and submission format
-
-Please complete the submission in [this form](todo).
+### Test set and submission guidelines
 
 We will release two CSV file `input_A.csv` and `input_B.csv` representing the test queries for dataset A and B respectively.  Each file contains the following five columns:
 
 * `src_id`: The source node ID
 * `dst_id`: The destination node ID
-* `event_type`: The event type ID
+* `edge_type`: The event type ID
 * `start_time`: The starting timestamp in Unix Epoch
 * `end_time`: The ending timestamp in Unix Epoch
 
-We expect two files `output_A.csv` and `output_B.csv` representing your predictions on each test query.  Each file should contain the same number of lines as the given input files.  Each line should contain a single number: 1 if you predict that the edge connecting from node ID `src_id` to node ID `dst_id` with type `event_type` will be added to the graph at some time between `start_time` and `end_time`, and 0 otherwise.
+We expect two files `output_A.csv` and `output_B.csv` representing your predictions on each test query.  Each file should contain the same number of lines as the given input files.  Each line should contain a single number: 1 if you predict that the edge connecting from node ID `src_id` to node ID `dst_id` with type `event_type` will be added to the graph at some time between `start_time` and `end_time` (inclusive of both endpoints), and 0 otherwise.
 
 It is guaranteed that the timestamps in the test set will be always later than the training set.  This is to match a more realistic setting where one learns from the past and predicts the future.
 
+During competition we will release an intermediate test set and a final test set.  The prizes will only depend on the performance on the final test set, and you will need to submit supplementary materials such as your code repository URL.  You can optionally submit your prediction on the intermediate test set and see how your model performs.
+
 #### Example
 
-(TODO)
+Say that an edge with type 0 from node 0 to node 1 will appear at timestamp 15000000:
+
+| `src_id` | `dst_id` | `edge_type` | `timestamp` |
+|:--------:|:--------:|:-----------:|:-----------:|
+| 0        | 1        | 0           | 15000000    |
+
+You should predict a 1 for the following query since the timestamp 15000000 is between 14000000 and 16000000:
+
+| `src_id` | `dst_id` | `edge_type` | `start_time` | `end_time` |
+|:--------:|:--------:|:-----------:|:------------:|:----------:|
+| 0        | 1        | 0           | 14000000     | 16000000   |
+
+However, you should predict a 0 for both test queries below:
+
+| `src_id` | `dst_id` | `edge_type` | `start_time` | `end_time` |
+|:--------:|:--------:|:-----------:|:------------:|:----------:|
+| 0        | 1        | 0           | 13000000     | 14000000   |
+
+| `src_id` | `dst_id` | `edge_type` | `start_time` | `end_time` |
+|:--------:|:--------:|:-----------:|:------------:|:----------:|
+| 0        | 1        | 0           | 16000000     | 17000000   |
 
 ### Competition Terms and Conditions
 
 At the end of the challenge, each team is encouraged to open source the source code that was used to generate their final challenge solution under the MIT license. To be eligible for the leaderboard or prizes, winning teams are also required to submit papers describing their method to the WSDM Cup Workshop, and present their work at the workshop.  Refer to the "Call for Papers" section on the WSDM Cup 2022 webpage for more details.
 
-Participants are allowed to participate only once, with no concurrent submissions or code sharing between the teams.
+Participants are allowed to participate only once, with no concurrent submissions or code sharing between the teams.  The same team can submit multiple times, with only the last submission being evaluated.
 
 Participants are not allowed to use external datasets or pretrained models.
 
+Although DGL team focuses on deep learning algorithms on graphs, we welcome any kinds of model in this challenge, regardless of whether it is a deep learning model or some graph learning algorithm.
+
 ### Evaluation Criteria
 
-We use Area Under ROC (AUC) as evaluation metric for both datasets, and use the *harmonic average* of the two AUCs as the score of the submission.  Specifically, let `AUC_A` and `AUC_B` be the AUC for Dataset A and Dataset B respectively, the final score is `2 / (1 / AUC_A + 1 / AUC_B)`.  This is to encourage the submissions to work well on both tasks, instead of working extremely well on one while sacrificing the other.
+We use Area Under ROC (AUC) as evaluation metric for both datasets, and use the *harmonic average* of the two AUCs as the score of the submission.  Specifically, let `AUC_A` and `AUC_B` be the AUC for Dataset A and Dataset B respectively, the final score is
+
+```
+2 / (1 / AUC_A + 1 / AUC_B)
+```
+
+This is to encourage the submissions to work well on both tasks, instead of working extremely well on one while sacrificing the other.
 
 ### Schedule
 
-(to be announced)
+| Date                         | Event                                                                        |
+|:----------------------------:|:----------------------------------------------------------------------------:|
+| Oct 15 2021                  | Website ready and training set available for download.                       |
+| Nov 11 2021                  | Intermediate test set release and intermediate submission starts.            |
+| Dec 11 2021                  | Intermediate submission ends.                                                |
+| Dec 16 2021                  | Intermediate leaderboard result announcement.                                |
+| Dec 17 2021                  | Final test set release and final submission starts.                          |
+| Jan 20 2022                  | Final submission ends.                                                       |
+| Jan 24 2022                  | Final leaderboard result announcement.                                       |
+| Jan 25 2022                  | Invitations to top 3 teams for short papers.                                 |
+| Feb 15 2022                  | Short paper deadline.                                                        |
+| Feb 21-25 2022               | WSDM Cup conference presentation.                                            |
+
+### Prizes
+
+1st place: $2,000 + one WSDM Cup conference registration
+2nd place: $1,000 + one WSDM Cup conference registration
+3rd place: $500 + one WSDM Cup conference registration
+
+We would like to thank Intel for kindly sponsoring this event.
 
 ### Support or Contact
 
-Join the channel **wsdm22-challenge** in [DGL's Slack workspace](https://join.slack.com/t/deep-graph-library/shared_invite/zt-eb4ict1g-xcg3PhZAFAB8p6dtKuP6xQ)
+If you have questions or need clarifications, feel free to join the channel **wsdm22-challenge** in [DGL's Slack workspace](https://join.slack.com/t/deep-graph-library/shared_invite/zt-eb4ict1g-xcg3PhZAFAB8p6dtKuP6xQ)
 
 ### Links
 
