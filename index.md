@@ -9,7 +9,7 @@ Temporal Link Prediction is one of the classical tasks on temporal graphs.  Cont
 We are expecting an approach that works well on large-scale temporal graphs in general.  In this challenge, we expect a single model that works well on two kinds of data simultaneously:
 
 * Dataset A: a dynamic event graph with entities as nodes and events as edges.
-* Dataset B: a user-item graph with users and items as nodes and various interactions as edges.
+* Dataset B: a user-item graph with 626,675 users and 677,370 items as nodes and 8,278,431 interactions as edges with 14 edge types.
 
 The task will be predicting whether an edge of a given type will exist between two given nodes before a given timestamp.
 
@@ -17,12 +17,12 @@ The task will be predicting whether an edge of a given type will exist between t
 
 Dataset A contains the following files:
 
-* `edges_train_A.csv` ([Download here](https://data.dgl.ai/dataset/WSDMCup2022/edges_train_A.csv.gz)): the file containing the temporal edges between the nodes.  Each row represents an edge with the following four columns:
+* `edges_train_A.csv` ([Download here]()): the file containing the temporal edges between the nodes.  Each row represents an edge with the following four columns:
   * `src_id`: the source node ID.
   * `dst_id`: the destination node ID.
   * `edge_type`: the edge type ID.
   * `timestamp`: the timestamp in Unix Epoch.
-* `node_features.csv` ([Download here](https://data.dgl.ai/dataset/WSDMCup2022/node_features.csv.gz)): the file whose rows represent node features.  The first column is the node ID while the rest of the columns are all anonymized categorical features.  -1 means that the categorical feature is missing.
+* `node_features.csv` ([Download here]()): the file whose rows represent node features.  The first column is the node ID while the rest of the columns are all anonymized categorical features.  -1 means that the categorical feature is missing.
 * `edge_type_features.csv` ([Download here](https://data.dgl.ai/dataset/WSDMCup2022/edge_type_features.csv.gz)): the file whose rows represent features of edge types.  The first column is the edge type ID while the rest of the columns are all anonymized categorical features.
 
 ### Description of Dataset B
