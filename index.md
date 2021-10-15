@@ -123,7 +123,7 @@ We would like to thank Intel for kindly sponsoring this event.
 
 ### Support or Contact
 
-If you have questions or need clarifications, feel free to join the channel **wsdm22-challenge** in [DGL's Slack workspace](https://join.slack.com/t/deep-graph-library/shared_invite/zt-eb4ict1g-xcg3PhZAFAB8p6dtKuP6xQ)
+If you have questions or need clarifications, feel free to join the channel **wsdm22-challenge** in [DGL's Slack workspace](https://join.slack.com/t/deep-graph-library/shared_invite/zt-eb4ict1g-xcg3PhZAFAB8p6dtKuP6xQ).
 
 ### Links
 
