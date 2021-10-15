@@ -17,19 +17,19 @@ The task will be predicting whether an edge of a given type will exist between t
 
 Dataset A contains the following files:
 
-* [`edges_train.csv`](https://data.dgl.ai/dataset/WSDMCup2022/edges_train.csv.gz): the file containing the temporal edges between the nodes.  Each row represents an edge with the following four columns:
+* `edges_train.csv` ([Download here](https://data.dgl.ai/dataset/WSDMCup2022/edges_train.csv.gz)): the file containing the temporal edges between the nodes.  Each row represents an edge with the following four columns:
   * `src_id`: the source node ID.
   * `dst_id`: the destination node ID.
   * `edge_type`: the edge type ID.
   * `timestamp`: the timestamp in Unix Epoch.
-* [`node_features.csv`](https://data.dgl.ai/dataset/WSDMCup2022/node_features.csv.gz): the file whose rows represent node features.  The first column is the node ID while the rest of the columns are all anonymized categorical features.  -1 means that the categorical feature is missing.
-* [`edge_type_features.csv`](https://data.dgl.ai/dataset/WSDMCup2022/edge_type_features.csv.gz): the file whose rows represent features of edge types.  The first column is the edge type ID while the rest of the columns are all anonymized categorical features.
+* `node_features.csv` ([Download here](https://data.dgl.ai/dataset/WSDMCup2022/node_features.csv.gz)): the file whose rows represent node features.  The first column is the node ID while the rest of the columns are all anonymized categorical features.  -1 means that the categorical feature is missing.
+* `edge_type_features.csv` ([Download here](https://data.dgl.ai/dataset/WSDMCup2022/edge_type_features.csv.gz)): the file whose rows represent features of edge types.  The first column is the edge type ID while the rest of the columns are all anonymized categorical features.
 
 ### Description of Dataset B
 
 Dataset B contains a single file:
 
-* [`edges_train.csv`](todo): the file containing the temporal edges between the users and items.  Each row contains the following columns:
+* `edges_train.csv` (todo): the file containing the temporal edges between the users and items.  Each row contains the following columns:
   * `src_id`: the source node ID.
   * `dst_id`: the destination node ID.
   * `edge_type`: the interaction type ID.
