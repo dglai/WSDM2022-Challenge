@@ -2,8 +2,6 @@
 
 ### Description
 
-We are DGL Team, the developers of [DGL](https://www.dgl.ai), one of the leading libraries dealing with deep learning on graphs.  We are deeply interested in methods of machine learning on graphs, as real world datasets can often be expressed as graphs, with entities as nodes and interactions as edges.  Examples include user-user interaction in social networks, user-item interactions in recommender systems, etc.  Moreover, these graphs are often in practice temporal, with new edges coming in with timestamps.  Therefore, our next focus is to support learning on large-scale temporal graphs, for which we are actively seeking out solutions that works well in general.
-
 Temporal Link Prediction is one of the classical tasks on temporal graphs.  Contrary to link prediction which asks if an edge exists between two nodes on a partially observed graph, Temporal Link Prediction asks if an edge will exist between two nodes within a given time span.  It is more useful than traditional link prediction as one can then build multiple applications around the model, such as forecasting the demand of customers in E-commerce, or forecasting what event will happen in a social network, etc.
 
 We are expecting an approach that works well on large-scale temporal graphs in general.  In this challenge, we expect a single model that works well on two kinds of data simultaneously:
