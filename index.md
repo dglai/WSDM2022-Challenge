@@ -84,7 +84,7 @@ Participants are allowed to participate only once, with no concurrent submission
 
 Participants are not allowed to use external datasets or pretrained models.
 
-Although DGL team focuses on deep learning algorithms on graphs, we welcome any kinds of model in this challenge, regardless of whether it is a deep learning model or some graph learning algorithm.
+We welcome any kinds of model in this challenge, regardless of whether it is a deep learning model or some graph learning algorithm.
 
 ### Evaluation Criteria
 
