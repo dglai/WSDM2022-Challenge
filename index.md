@@ -4,7 +4,7 @@
 
 Temporal Link Prediction is one of the classical tasks on temporal graphs.  Contrary to link prediction which asks if an edge exists between two nodes on a partially observed graph, Temporal Link Prediction asks if an edge will exist between two nodes within a given time span.  It is more useful than traditional link prediction as one can then build multiple applications around the model, such as forecasting the demand of customers in E-commerce, or forecasting what event will happen in a social network, etc.
 
-We are expecting an approach that works well on large-scale temporal graphs in general.  In this challenge, we expect a single model that works well on two kinds of data simultaneously:
+We are expecting an approach that works well on large-scale temporal graphs in general.  In this challenge, we expect a single model (hyperparameters can vary) that works well on two kinds of data simultaneously:
 
 * Dataset A: a dynamic event graph with entities as nodes and different types of events as edges.
 * Dataset B: a user-item graph with users and items as nodes and different types of interactions as edges.
@@ -47,7 +47,7 @@ We will release two CSV file `input_A.csv` and `input_B.csv` representing the te
 * `start_time`: The starting timestamp in Unix Epoch
 * `end_time`: The ending timestamp in Unix Epoch
 
-We expect two files `output_A.csv` and `output_B.csv` representing your predictions on each test query.  Each file should contain the same number of lines as the given input files.  Each line should contain a single number: 1 if you predict that the edge connecting from node ID `src_id` to node ID `dst_id` with type `event_type` will be added to the graph at some time between `start_time` and `end_time` (inclusive of both endpoints), and 0 otherwise.
+We expect two files `output_A.csv` and `output_B.csv` representing your predictions on each test query.  Each file should contain the same number of lines as the given input files.  Each line should contain a single number representing the predicted probability that the edge connecting from node ID `src_id` to node ID `dst_id` with type `event_type` will be added to the graph at some time between `start_time` and `end_time` (inclusive of both endpoints).
 
 It is guaranteed that the timestamps in the test set will be always later than the training set.  This is to match a more realistic setting where one learns from the past and predicts the future.
 
