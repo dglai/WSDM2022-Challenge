@@ -140,7 +140,7 @@ def train(args, g):
             neg_exist_prob = model.time_predict(emb_cat, time_emb_shuffle).squeeze()
 
             probs = torch.cat([pos_exist_prob,neg_exist_prob],0)
-            label = torch.cat([torch.ones_like(ts),neg_label],0)
+            label = torch.cat([torch.ones_like(ts),neg_label],0).float()
             loss += loss_fcn(probs, label)/len(g.etypes)
                 
         loss_values.append(loss.item())
