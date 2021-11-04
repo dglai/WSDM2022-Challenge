@@ -45,3 +45,4 @@ You also need at least 64GB of CPU memory.  GPU is not required.
 
 ## Performance on Initial Test Set
 
+The baseline got AUC of 0.511 on Dataset A and 0.510 on Dataset B.

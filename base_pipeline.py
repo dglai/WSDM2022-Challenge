@@ -103,7 +103,7 @@ def train(args, g):
     if args.dataset == 'B':
         dim_nfeat = args.emb_dim*2 
         for ntype in g.ntypes:
-            g.nodes[ntype].data['feat'] = torch.randn((g.number_of_nodes(ntype), dim_nfeat)) 
+            g.nodes[ntype].data['feat'] = torch.randn((g.number_of_nodes(ntype), dim_nfeat)) * 0.05
     else:
         dim_nfeat = g.ndata['feat'].shape[1]
 
