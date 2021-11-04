@@ -53,6 +53,8 @@ It is guaranteed that the timestamps in the test set will be always later than t
 
 During competition we will release an intermediate test set and a final test set.  The prizes will only depend on the performance on the final test set, and you will need to submit supplementary materials such as your code repository URL.  You can optionally submit your prediction on the intermediate test set and see how your model performs.
 
+**11/4 Update:** We have released an initial test set for [Dataset A]() and [Dataset B]() for developing your solutions, as well as a [simple baseline](https://github.com/dglai/WSDM2022-Challenge).
+
 #### Example
 
 Say that an edge with type 0 from node 0 to node 1 will appear at timestamp 15000000:
@@ -61,13 +63,13 @@ Say that an edge with type 0 from node 0 to node 1 will appear at timestamp 1500
 |:--------:|:--------:|:-----------:|:-----------:|
 | 0        | 1        | 0           | 15000000    |
 
-You should predict a 1 for the following query since the timestamp 15000000 is between 14000000 and 16000000:
+You should predict some probability close to 1 for the following query since the timestamp 15000000 is between 14000000 and 16000000:
 
 | `src_id` | `dst_id` | `edge_type` | `start_time` | `end_time` |
 |:--------:|:--------:|:-----------:|:------------:|:----------:|
 | 0        | 1        | 0           | 14000000     | 16000000   |
 
-However, you should predict a 0 for both test queries below:
+However, you should predict some probability close to 0 for both test queries below:
 
 | `src_id` | `dst_id` | `edge_type` | `start_time` | `end_time` |
 |:--------:|:--------:|:-----------:|:------------:|:----------:|
