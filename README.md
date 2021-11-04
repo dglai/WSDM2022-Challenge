@@ -45,4 +45,3 @@ You also need at least 64GB of CPU memory.  GPU is not required.
 
 ## Performance on Initial Test Set
 
-AUC on initial test sets are 0.54 for Dataset A and 0.56 for Dataset B.
