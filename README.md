@@ -6,7 +6,7 @@
 
 This branch offers
 
-* An initial test set having 10,000 test examples for each dataset, together with their labels in `exist` column.  Note that this test set only serves for development purposes.  So
+* An initial test set having a small number of test examples for each dataset, together with their labels in `exist` column.  Note that this test set only serves for development purposes.  So
   * The intermediate and final dataset will **not** contain the `exist` column.
   * This is **not** the intermediate dataset we will be using for ranking solutions.
 * A simple baseline that trains on both datasets.
