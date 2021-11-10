@@ -54,7 +54,7 @@ It is guaranteed that the timestamps in the test set will be always later than t
 During competition we will release an intermediate test set and a final test set.  The prizes will only depend on the performance on the final test set, and you will need to submit supplementary materials such as your code repository URL.  You can optionally submit your prediction on the intermediate test set and see how your model performs.
 
 **11/4 Update:** We have released an initial test set for [Dataset A](https://data.dgl.ai/dataset/WSDMCup2022/input_A_initial.csv.gz) and [Dataset B](https://data.dgl.ai/dataset/WSDMCup2022/input_B_initial.csv.gz) for developing your solutions, as well as a [simple baseline](https://github.com/dglai/WSDM2022-Challenge).
-**11/10 Update:** We have updated the initial test set for Dataset B so that the nodes not appearing in the training set are removed.
+**11/10 Update:** We have updated the initial test set for Dataset B so that the nodes not appearing in the training set are removed.  The resulting number of test examples is 5,074.
 
 #### Example
 
