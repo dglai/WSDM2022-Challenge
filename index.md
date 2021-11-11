@@ -53,8 +53,14 @@ It is guaranteed that the timestamps in the test set will be always later than t
 
 During competition we will release an intermediate test set and a final test set.  The prizes will only depend on the performance on the final test set, and you will need to submit supplementary materials such as your code repository URL.  You can optionally submit your prediction on the intermediate test set and see how your model performs.
 
-**11/4 Update:** We have released an initial test set for [Dataset A](https://data.dgl.ai/dataset/WSDMCup2022/input_A_initial.csv.gz) and [Dataset B](https://data.dgl.ai/dataset/WSDMCup2022/input_B_initial.csv.gz) for developing your solutions, as well as a [simple baseline](https://github.com/dglai/WSDM2022-Challenge).
+**11/11 Update:**
+* **We now release the intermediate test set for [Dataset A](https://data.dgl.ai/dataset/WSDMCup2022/intermediate/input_A.csv) and [Dataset B](https://data.dgl.ai/dataset/WSDMCup2022/intermediate/input_B.csv).**
+* **Intermediate test set prediction submission is available through [this Google form](https://forms.gle/X8xkMmSyq3iZXYUi8) until December 11th 2022 23:59:59PM AoE.  You will need a Google account to upload your prediction file there.**  If you cannot do so for any reason, feel free to reach out to us in the Slack channel so we can figure out alternatives.
+* The intermediate leaderboard result will be released on December 16th 2022.  There will be no real-time leaderboards.  If the same team made multiple edits or submitted multiple forms, only the last submission will be evaluated.
+
 **11/10 Update:** We have updated the initial test set for Dataset B so that the nodes not appearing in the training set are removed.  The resulting number of test examples is 5,074.
+
+**11/4 Update:** We have released an initial test set for [Dataset A](https://data.dgl.ai/dataset/WSDMCup2022/input_A_initial.csv.gz) and [Dataset B](https://data.dgl.ai/dataset/WSDMCup2022/input_B_initial.csv.gz) for developing your solutions, as well as a [simple baseline](https://github.com/dglai/WSDM2022-Challenge).
 
 #### Example
 
