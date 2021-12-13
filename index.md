@@ -53,10 +53,25 @@ It is guaranteed that the timestamps in the test set will be always later than t
 
 During competition we will release an intermediate test set and a final test set.  The prizes will only depend on the performance on the final test set, and you will need to submit supplementary materials such as your code repository URL.  You can optionally submit your prediction on the intermediate test set and see how your model performs.
 
+**12/13 Update:**
+
+After inspection of the data and submissions we have found that there are some test set records already appearing in the training set.  Moreover, some of the test set records are labeled 0 while they actually appear in the training set.  Because of this, we have updated the [input_A_initial.csv.gz](https://data.dgl.ai/dataset/WSDMCup2022/input_A_initial.csv.gz) and [input_B_initial.csv.gz](https://data.dgl.ai/dataset/WSDMCup2022/input_B_initial.csv.gz) files, as well as the intermediate test set [input_A.csv.gz](https://data.dgl.ai/dataset/WSDMCup2022/intermediate/input_A.csv.gz) and [input_B.csv.gz](https://data.dgl.ai/dataset/WSDMCup2022/intermediate/input_B.csv.gz), in the original URL, removing the test records with issues.  As a result:
+
+* 1802 records in input_A_initial.csv.gz are removed.
+* 97 records in input_A.csv.gz are removed.
+* 1211 records in input_B_initial.csv.gz are removed.
+* 60 records in input_B.csv.gz are removed.
+
+The old intermediate test set are kept here for [dataset A](https://data.dgl.ai/dataset/WSDMCup2022/intermediate-old/input_A.csv.gz) and [dataset B](https://data.dgl.ai/dataset/WSDMCup2022/intermediate-old/input_B.csv.gz).
+
+As a result:
+
+* **Intermediate test set prediction submission remains available through [this Google form](https://forms.gle/X8xkMmSyq3iZXYUi8) until ~~December 11th 2021~~ December 20th 2021 23:59:59PM AoE.  You will need a Google account to upload your prediction file there.**  If you cannot do so for any reason, feel free to reach out to us in the Slack channel so we can figure out alternatives.
+  * You can choose not to resubmit; in this case, only the predictions of the remaining test records will be evaluated.
+* The intermediate leaderboard result will be released on ~~December 16th 2021~~ December 22nd 2021.  There will be no real-time leaderboards.  If the same team made multiple edits or submitted multiple forms, only the last submission will be evaluated.
+
 **11/11 Update:**
 * **We now release the intermediate test set for [Dataset A](https://data.dgl.ai/dataset/WSDMCup2022/intermediate/input_A.csv.gz) and [Dataset B](https://data.dgl.ai/dataset/WSDMCup2022/intermediate/input_B.csv.gz).**
-* **Intermediate test set prediction submission is available through [this Google form](https://forms.gle/X8xkMmSyq3iZXYUi8) until December 11th 2022 23:59:59PM AoE.  You will need a Google account to upload your prediction file there.**  If you cannot do so for any reason, feel free to reach out to us in the Slack channel so we can figure out alternatives.
-* The intermediate leaderboard result will be released on December 16th 2022.  There will be no real-time leaderboards.  If the same team made multiple edits or submitted multiple forms, only the last submission will be evaluated.
 
 **11/10 Update:** We have updated the initial test set for Dataset B so that the nodes not appearing in the training set are removed.  The resulting number of test examples is 5,074.
 
@@ -112,9 +127,9 @@ This is to encourage the submissions to work well on both tasks, instead of work
 |:----------------------------:|:----------------------------------------------------------------------------:|
 | Oct 15 2021                  | Website ready and training set available for download.                       |
 | Nov 11 2021                  | Intermediate test set release and intermediate submission starts.            |
-| Dec 11 2021                  | Intermediate submission ends.                                                |
-| Dec 16 2021                  | Intermediate leaderboard result announcement.                                |
-| Dec 17 2021                  | Final test set release and final submission starts.                          |
+| ~~Dec 11 2021~~ Dec 20 2021                  | Intermediate submission ends.                                                |
+| ~~Dec 16 2021~~ Dec 22 2021                  | Intermediate leaderboard result announcement.                                |
+| ~~Dec 17 2021~~ Dec 23 2021                  | Final test set release and final submission starts.                          |
 | Jan 20 2022                  | Final submission ends.                                                       |
 | Jan 24 2022                  | Final leaderboard result announcement.                                       |
 | Jan 25 2022                  | Invitations to top 3 teams for short papers.                                 |
