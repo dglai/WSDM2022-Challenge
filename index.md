@@ -53,6 +53,10 @@ It is guaranteed that the timestamps in the test set will be always later than t
 
 During competition we will release an intermediate test set and a final test set.  The prizes will only depend on the performance on the final test set, and you will need to submit supplementary materials such as your code repository URL.  You can optionally submit your prediction on the intermediate test set and see how your model performs.
 
+**12/23 Update:** **[The intermediate leaderboard](https://data.dgl.ai/dataset/WSDMCup2022/results.xlsx) has been announced.  Due to the difference between the difficulties of two datasets, we have also changed the ranking metric from harmonic average of AUC to the average of T-scores to encourage balancing the performance on both dataset, instead of sacrificing the performance on one for the other.  See the Evaluation Criteria section below for details.**
+
+**The final test set for [dataset A](https://data.dgl.ai/dataset/WSDMCup2022/final/input_A.csv.gz) and [dataset B](https://data.dgl.ai/dataset/WSDMCup2022/final/input_B.csv.gz) has been released as well.  Submission is open with [this Google form](https://forms.gle/xm2AsikFgV9qvDDE7) until January 20th 2022 23:59:59PM AoE.**
+
 **12/13 Update:**
 
 After inspection of the data and submissions we have found that there are some test set records already appearing in the training set.  Moreover, some of the test set records are labeled 0 while they actually appear in the training set.  Because of this, we have updated the [input_A_initial.csv.gz](https://data.dgl.ai/dataset/WSDMCup2022/input_A_initial.csv.gz) and [input_B_initial.csv.gz](https://data.dgl.ai/dataset/WSDMCup2022/input_B_initial.csv.gz) files, as well as the intermediate test set [input_A.csv.gz](https://data.dgl.ai/dataset/WSDMCup2022/intermediate/input_A.csv.gz) and [input_B.csv.gz](https://data.dgl.ai/dataset/WSDMCup2022/intermediate/input_B.csv.gz), in the original URL, removing the test records with issues.  As a result:
@@ -113,13 +117,46 @@ We welcome any kinds of model in this challenge, regardless of whether it is a d
 
 ### Evaluation Criteria
 
-We use Area Under ROC (AUC) as evaluation metric for both datasets, and use the *harmonic average* of the two AUCs as the score of the submission.  Specifically, let `AUC_A` and `AUC_B` be the AUC for Dataset A and Dataset B respectively, the final score is
+~~We use Area Under ROC (AUC) as evaluation metric for both datasets, and use the *harmonic average* of the two AUCs as the score of the submission.  Specifically, let `AUC_A` and `AUC_B` be the AUC for Dataset A and Dataset B respectively, the final score is `2 / (1 / AUC_A + 1 / AUC_B)`~~
+
+~~This is to encourage the submissions to work well on both tasks, instead of working extremely well on one while sacrificing the other.~~
+
+**12/23 Update:** In order to balance the difficulty between two datasets, we have decided to change the ranking metric from the harmonic average: `2 / (1 / AUC_A + 1 / AUC_B)` to **the average of T-scores**, to better promote our goal on "encouraging the submissions to work well on both instead of working extremely well on one while sacrificing the other".  The T-score of a dataset is computed as
 
 ```
-2 / (1 / AUC_A + 1 / AUC_B)
+TScore = (AUC - mean(AUC)) / std(AUC) * 0.1 + 0.5
 ```
 
-This is to encourage the submissions to work well on both tasks, instead of working extremely well on one while sacrificing the other.
+where `mean(AUC)` and `std(AUC)` represents the mean and standard deviation of AUC of all participants.  The score for ranking will be `(TScore_A + TScore_B) / 2`.
+
+For reference, we also kept the original harmonic average of AUC in the leaderboard.
+
+### Leaderboard for Intermediate Test Set
+
+This is an excerpt from the complete leaderboard; for score computation details please refer [here](https://data.dgl.ai/dataset/WSDMCup2022/results.xlsx).
+
+| Team Name | AUC (Dataset A) | AUC (Dataset B) | Harmonic Average of AUC | Average of T/100  | Rank on Harmonic Average of AUC | Rank on Average of T/100 |
+|:---------:|:---------------:|:---------------:|:-----------------------:|:-----------------:|:-------------------------------:|:------------------------:|
+| IDEAS Lab UT | 0.582272719 | 0.872039558 | 0.698288604 | 0.813037237 | 1 | 1 |
+| DIVE@TAMU | 0.495906631 | 0.756680212 | 0.599148453 | 0.585081611 | 2 | 2 |
+| nothing here | 0.500971508 | 0.632476354 | 0.559095205 | 0.534215147 | 3 | 3 |
+| Graphile | 0.52824279 | 0.501279235 | 0.51440792 | 0.523983091 | 8 | 4 |
+| smallhand | 0.516251289 | 0.539024256 | 0.527392051 | 0.518700616 | 6 | 5 |
+| /tmp/graph | 0.519933859 | 0.519243432 | 0.519588416 | 0.516306306 | 7 | 6 |
+| HUST_D5 | 0.496201592 | 0.572936262 | 0.531815208 | 0.495548282 | 5 | 7 |
+| HappyICES | 0.507947137 | 0.500995797 | 0.504447521 | 0.48357129 | 10 | 8 |
+| TopoLab | 0.501385353 | 0.525133491 | 0.51298472 | 0.482389216 | 9 | 9 |
+| 10000 Monkeys | 0.505363661 | 0.499368274 | 0.50234808 | 0.47764665 | 11 | 10 |
+| AntGraph | 0.503390663 | 0.5 | 0.501689602 | 0.474041453 | 13 | 11 |
+| zhang | 0.501189056 | 0.502050738 | 0.501619527 | 0.470678591 | 14 | 12 |
+| neutrino | 0.500645569 | 0.501220483 | 0.500932861 | 0.469192943 | 15 | 13 |
+| Tencent_2022 | 0.499652798 | 0.500876566 | 0.500263933 | 0.467054303 | 16 | 14 |
+| MegaTron | 0.498004853 | 0.505898455 | 0.50192062 | 0.466247299 | 12 | 15 |
+| marble | 0.49767288 | 0.499622357 | 0.498645713 | 0.462510404 | 18 | 16 |
+| beauty | 0.495978453 | 0.503765895 | 0.499841844 | 0.461180372 | 17 | 17 |
+| luozhhh | 0.502644132 | 0.453959254 | 0.477062822 | 0.449979073 | 20 | 18 |
+| no_free_lunch | 0.438312773 | 0.681825615 | 0.533599918 | 0.434084762 | 4 | 19 |
+| NodeInGraph | 0.47341036 | 0.5 | 0.486342019 | 0.414551355 | 19 | 20 |
 
 ### Schedule
 
@@ -138,9 +175,9 @@ This is to encourage the submissions to work well on both tasks, instead of work
 
 ### Prizes
 
-1st place: $2,000 + one WSDM Cup conference registration
-2nd place: $1,000 + one WSDM Cup conference registration
-3rd place: $500 + one WSDM Cup conference registration
+* 1st place: $2,000 + one WSDM Cup conference registration
+* 2nd place: $1,000 + one WSDM Cup conference registration
+* 3rd place: $500 + one WSDM Cup conference registration
 
 We would like to thank Intel for kindly sponsoring this event.
 
