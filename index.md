@@ -53,7 +53,11 @@ It is guaranteed that the timestamps in the test set will be always later than t
 
 During competition we will release an intermediate test set and a final test set.  The prizes will only depend on the performance on the final test set, and you will need to submit supplementary materials such as your code repository URL.  You can optionally submit your prediction on the intermediate test set and see how your model performs.
 
-**12/23 Update:** **[The intermediate leaderboard](https://data.dgl.ai/dataset/WSDMCup2022/results.xlsx) has been announced.  Due to the difference between the difficulties of two datasets, we have also changed the ranking metric from harmonic average of AUC to the average of T-scores to encourage balancing the performance on both dataset, instead of sacrificing the performance on one for the other.  See the Evaluation Criteria section below for details.**
+**12/23 Update:** **[The intermediate leaderboard](https://data.dgl.ai/dataset/WSDMCup2022/results.xlsx) has been announced.**  Note that the ranking on the intermediate test set will not impact the ranking on the final test set and the prize in any way.
+
+Due to the difference between the difficulties of two datasets, we have also **changed the ranking metric from harmonic average of AUC to the average of T-scores to encourage balancing the performance on both dataset, instead of sacrificing the performance on one for the other.  See the Evaluation Criteria section below for details.**
+
+We have also made available a [quick evaluation platform](http://eval-env.eba-5u39qmpg.us-west-2.elasticbeanstalk.com/) for the intermediate test set.  During the rest of the competition you can submit your prediction on the intermediate test set there as many times as you like.
 
 **The final test set for [dataset A](https://data.dgl.ai/dataset/WSDMCup2022/final/input_A.csv.gz) and [dataset B](https://data.dgl.ai/dataset/WSDMCup2022/final/input_B.csv.gz) has been released as well.  Submission is open with [this Google form](https://forms.gle/xm2AsikFgV9qvDDE7) until January 20th 2022 23:59:59PM AoE.**
 
@@ -133,7 +137,7 @@ For reference, we also kept the original harmonic average of AUC in the leaderbo
 
 ### Leaderboard for Intermediate Test Set
 
-This is an excerpt from the complete leaderboard; for score computation details please refer [here](https://data.dgl.ai/dataset/WSDMCup2022/results.xlsx).
+This is an excerpt from the complete leaderboard; for score computation details please refer [here](https://data.dgl.ai/dataset/WSDMCup2022/results.xlsx).  Note that this will not impact the ranking on the final test set and the prize.
 
 | Team Name | AUC (Dataset A) | AUC (Dataset B) | Harmonic Average of AUC | Average of T/100  | Rank on Harmonic Average of AUC | Rank on Average of T/100 |
 |:---------:|:---------------:|:---------------:|:-----------------------:|:-----------------:|:-------------------------------:|:------------------------:|
@@ -174,6 +178,8 @@ This is an excerpt from the complete leaderboard; for score computation details 
 | Feb 21-25 2022               | WSDM Cup conference presentation.                                            |
 
 ### Prizes
+
+The prizes will be determined solely by the performance on the final test set.
 
 * 1st place: $2,000 + one WSDM Cup conference registration
 * 2nd place: $1,000 + one WSDM Cup conference registration
