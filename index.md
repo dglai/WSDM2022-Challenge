@@ -117,7 +117,7 @@ Participants are allowed to participate only once, with no concurrent submission
 
 Participants are not allowed to use external datasets or pretrained models.
 
-We welcome any kinds of model in this challenge, regardless of whether it is a deep learning model or some graph learning algorithm.
+We welcome any kinds of model in this challenge, regardless of whether it is a deep learning model or some graph learning algorithm.  **1/12 Update: We expect a single model working on both datasets, although hyperparameters could vary.  Ensemble methods are not allowed.**
 
 ### Evaluation Criteria
 
