@@ -111,7 +111,16 @@ However, you should predict some probability close to 0 for both test queries be
 
 ### Competition Terms and Conditions
 
-At the end of the challenge, each team is encouraged to open source the source code that was used to generate their final challenge solution under the MIT license. To be eligible for the leaderboard or prizes, winning teams are also required to submit papers describing their method to the WSDM Cup Workshop, and present their work at the workshop.  Refer to the "Call for Papers" section on the WSDM Cup 2022 webpage for more details.
+At the end of the challenge, each team is encouraged to open source the source code that was used to generate their final challenge solution under the MIT license. To be eligible for the leaderboard or prizes, winning teams are also required to submit papers describing their method to the WSDM Cup Workshop, and present their work at the workshop.  **1/19/2022 Update with the message from WSDM Cup Chair, specifically for competition winners:**
+
+> To claim prizes, those teams who are announced as task winners will be expected to present their solutions at the WSDM Cup 2022 event (virtually), and must also submit a report describing their solution in detail -- these reports will be made available on the WSDM Cup website and will be referenceable as scientific reports in the future. Note that the reports are archival, and will not be part of official WSDM proceedings.
+>
+> The reports must be in English, in PDF format, and should not exceed four (4) pages in the current ACM two-column conference format (including references and figures). Suitable LaTeX and Word templates are available from the ACM Website. Please mention the team name in the authors section, and provide a link to a repository for the open-sourced code within the PDF.
+>
+> The submission deadline is February 15th, 2020 (AOE timezone).
+> Submissions will be managed via EasyChair: https://easychair.org/conferences/?conf=wsdmcup22
+
+Refer to the "Call for Papers" section on the WSDM Cup 2022 webpage for more details.
 
 Participants are allowed to participate only once, with no concurrent submissions or code sharing between the teams.  The same team can submit multiple times, with only the last submission being evaluated.
 
