@@ -171,6 +171,30 @@ This is an excerpt from the complete leaderboard; for score computation details 
 | no_free_lunch | 0.438312773 | 0.681825615 | 0.533599918 | 0.434084762 | 4 | 19 |
 | NodeInGraph | 0.47341036 | 0.5 | 0.486342019 | 0.414551355 | 19 | 20 |
 
+### Leaderboard for Final Test Set
+
+This is an excerpt from the complete leaderboard; for score computation details please refer [here](https://docs.google.com/spreadsheets/d/1Lf9bI_L7Mbd3Z69Rk_--1gPxA9K9wKr6/edit#gid=1507357143).
+
+| Team name        | Dataset A AUC | Dataset B AUC | Dataset A T-score/100 | Dataset B T-score/100 | Average of T/100 | Ranking | Status     |
+| ---------------- | ------------- | ------------- | --------------------- | --------------------- | ---------------- | ------- | ---------- |
+| AntGraph         | 0.666001      | 0.901961      | 0.676837              | 0.584637              | 0.630737         | 1       | 1st Prize  |
+| nothing here     | 0.662482      | 0.906923      | 0.670374              | 0.587511              | 0.628942         | 2       | 2nd Prize  |
+| NodeInGraph      | 0.627821      | 0.865567      | 0.606713              | 0.56356               | 0.585137         | 3       | 3rd Prize  |
+| We can \[mask\]! | 0.603621      | 0.898232      | 0.562266              | 0.582478              | 0.572372         | 4       | Runners-up |
+| IDEAS Lab UT     | 0.605264      | 0.873949      | 0.565283              | 0.568414              | 0.566849         | 5       | Runners-up |
+| SLi-Rec          | 0.583935      | 0.892547      | 0.526108              | 0.579186              | 0.552647         | 6       | Runners-up |
+| no\_free\_lunch  | 0.574475      | 0.911889      | 0.508733              | 0.590387              | 0.54956          | 7       |            |
+| DIVE@TAMU        | 0.585244      | 0.854917      | 0.528512              | 0.557392              | 0.542952         | 8       |            |
+| TopoLab          | 0.537097      | 0.896267      | 0.440082              | 0.581339              | 0.510711         | 9       |            |
+| smallhand        | 0.538031      | 0.726306      | 0.441797              | 0.48291               | 0.462353         | 10      |            |
+| 10000 Monkeys    | 0.547856      | 0.532121      | 0.459841              | 0.370451              | 0.415146         | 11      |            |
+| Marble           | 0.499147      | 0.592357      | 0.370378              | 0.405335              | 0.387857         | 12      |            |
+| /tmp/graph       | 0.516565      | 0.523069      | 0.40237               | 0.365208              | 0.383789         | 13      |            |
+| MegaTron         | 0.496068      | 0.501011      | 0.364723              | 0.352434              | 0.358578         | 14      |            |
+| graphile         | 0.502199      | 0.460128      | 0.375984              | 0.328757              | 0.35237          | 15      |            |
+
+The top 3 teams are eligible for prizes.  In addition, the runners-up will be also eligible for one free WSDM Cup registration.  The 1st-6th place teams are required to submit a technical report and present the solutions to the WSDM Cup conference.
+
 ### Schedule
 
 | Date                         | Event                                                                        |
@@ -182,7 +206,7 @@ This is an excerpt from the complete leaderboard; for score computation details 
 | ~~Dec 17 2021~~ Dec 23 2021                  | Final test set release and final submission starts.                          |
 | Jan 20 2022                  | Final submission ends.                                                       |
 | Jan 24 2022                  | Final leaderboard result announcement.                                       |
-| Jan 25 2022                  | Invitations to top 3 teams for short papers.                                 |
+| Jan 25 2022                  | Invitations to top 6 teams for short papers.                                 |
 | Feb 15 2022                  | Short paper deadline.                                                        |
 | Feb 21-25 2022               | WSDM Cup conference presentation.                                            |
 
@@ -193,6 +217,7 @@ The prizes will be determined solely by the performance on the final test set.
 * 1st place: $2,000 + one WSDM Cup conference registration
 * 2nd place: $1,000 + one WSDM Cup conference registration
 * 3rd place: $500 + one WSDM Cup conference registration
+* 4th-6th place: one WSDM Cup conference registration
 
 We would like to thank Intel for kindly sponsoring this event.
 
